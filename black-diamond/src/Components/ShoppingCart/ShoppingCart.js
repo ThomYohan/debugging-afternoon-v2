@@ -3,7 +3,7 @@ import "./ShoppingCart.css";
 
 class ShoppingCart extends Component {
   render() {
-    let shoppingCartDisplay = this.props.cart.map((element, index) => {
+    let shoppingCartDisplay = this.props.showCart.map((element, index) => {
       return (
         <div className="shopping-cart-product-container" key={index}>
           <img src={element.image} alt="" />
@@ -13,7 +13,7 @@ class ShoppingCart extends Component {
             <div className="shopping-cart-button-container">
               <button
                 className="shopping-cart-button"
-                onClick={() => this.props.removeFromCart}
+                onClick={() => this.props.removeFromCart(index)}
               >
                 Remove From Shopping Cart
               </button>
